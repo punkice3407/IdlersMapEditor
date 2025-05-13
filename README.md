@@ -1,6 +1,12 @@
 https://discord.com/invite/FD2cYKBq5E
 
-idlers tavern has all the information about updates
+idlers tavern has all the information about updates"
+
+
+
+
+
+
 ![image](https://github.com/user-attachments/assets/395931d7-bb59-4206-b21b-1c841c9921f4)
 
 ![image](https://github.com/user-attachments/assets/50bea42b-7000-4e35-a8d7-f1fa38c2e4a8)
