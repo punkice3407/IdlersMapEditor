@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<replace_items>
+	<replace replaceId="101" withId="103" />
+	<replace replaceId="106" withId="109" />
+</replace_items>

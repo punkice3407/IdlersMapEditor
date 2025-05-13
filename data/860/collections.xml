@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<materials>
+  <tileset name="Default">
+    <collections>
+      <brush name="custom_1"/>
+      <brush name="custom_2"/>
+      <brush name="custom_3"/>
+    </collections>
+  </tileset>
+</materials>

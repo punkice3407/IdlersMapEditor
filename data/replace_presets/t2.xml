@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<replace_items>
+	<replace replaceId="14553" withId="13201" />
+	<replace replaceId="14560" withId="13204" />
+	<replace replaceId="14559" withId="13203" />
+	<replace replaceId="14561" withId="13206" />
+	<replace replaceId="14562" withId="13205" />
+	<replace replaceId="14564" withId="13208" />
+	<replace replaceId="14563" withId="13207" />
+	<replace replaceId="14565" withId="13210" />
+	<replace replaceId="14566" withId="13209" />
+	<replace replaceId="14558" withId="13212" />
+	<replace replaceId="14553" withId="13201" />
+	<replace replaceId="14557" withId="13211" />
+	<replace replaceId="14554" withId="13202" />
+	<replace replaceId="14536" withId="12912" />
+</replace_items>

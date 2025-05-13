@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<towns>
+	<town id="1" name="Rookgaard">
+		<temple x="1142" y="1103" z="5" />
+	</town>
+	<town id="2" name="Citadel Isle">
+		<temple x="3696" y="3612" z="7" />
+	</town>
+	<town id="3" name="Elary">
+		<temple x="3162" y="1332" z="7" />
+	</town>
+	<town id="4" name="Woodlow">
+		<temple x="3161" y="1076" z="7" />
+	</town>
+	<town id="5" name="Smallville">
+		<temple x="3192" y="1129" z="5" />
+	</town>
+	<town id="6" name="Emerald Town">
+		<temple x="4791" y="3446" z="8" />
+	</town>
+	<town id="7" name="Caver Camp">
+		<temple x="5036" y="3307" z="7" />
+	</town>
+	<town id="8" name="Toros Town">
+		<temple x="4882" y="2982" z="6" />
+	</town>
+	<town id="9" name="Icelai">
+		<temple x="5015" y="2325" z="7" />
+	</town>
+	<town id="10" name="Drathk'ia">
+		<temple x="5110" y="4844" z="5" />
+	</town>
+	<town id="11" name="GM">
+		<temple x="5094" y="5106" z="7" />
+	</town>
+	<town id="12" name="Nargor">
+		<temple x="3917" y="3822" z="6" />
+	</town>
+</towns>

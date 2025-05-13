@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<materials>
+  <tileset name="Default">
+    <collections>
+      <brush name="custom_1"/>
+      <brush name="custom_2"/>
+      <brush name="custom_3"/>
+      <brush name="custom_4"/>
+      <brush name="custom_5"/>
+      <brush name="custom_6"/>
+      <brush name="custom_7"/>
+      <brush name="custom_8"/>
+      <brush name="custom_9"/>
+      <brush name="custom_10"/>
+      <brush name="custom_11"/>
+      <brush name="custom_14"/>
+      <brush name="custom_15"/>
+      <brush name="custom_16"/>
+      <brush name="custom_17"/>
+      <brush name="custom_18"/>
+      <brush name="custom_19"/>
+      <brush name="custom_20"/>
+      <brush name="custom_21"/>
+      <brush name="custom_22"/>
+      <brush name="custom_23"/>
+      <brush name="custom_24"/>
+      <brush name="custom_25"/>
+      <brush name="custom_26"/>
+      <brush name="custom_27"/>
+      <brush name="custom_28"/>
+      <brush name="custom_29"/>
+      <brush name="custom_30"/>
+      <brush name="custom_31"/>
+      <brush name="custom_32"/>
+      <brush name="custom_33"/>
+      <brush name="custom_34"/>
+      <brush name="custom_35"/>
+      <brush name="custom_36"/>
+      <brush name="custom_37"/>
+      <brush name="custom_38"/>
+      <brush name="custom_39"/>
+      <brush name="custom_40"/>
+      <brush name="custom_41"/>
+      <brush name="custom_42"/>
+      <brush name="custom_43"/>
+      <brush name="custom_44"/>
+      <brush name="custom_45"/>
+      <brush name="custom_46"/>
+      <brush name="custom_47"/>
+      <brush name="custom_48"/>
+      <brush name="custom_49"/>
+      <brush name="custom_50"/>
+      <brush name="custom_51"/>
+      <brush name="custom_52"/>
+      <brush name="custom_53"/>
+      <brush name="custom_54"/>
+      <brush name="custom_55"/>
+      <brush name="custom_56"/>
+      <brush name="custom_57"/>
+    </collections>
+  </tileset>
+</materials>

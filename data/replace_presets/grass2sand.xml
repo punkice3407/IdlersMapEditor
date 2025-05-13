@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<replace_items>
+	<replace replaceId="4644" withId="607" />
+	<replace replaceId="4646" withId="606" />
+	<replace replaceId="4647" withId="609" />
+	<replace replaceId="4645" withId="608" />
+	<replace replaceId="4638" withId="617" />
+	<replace replaceId="4637" withId="615" />
+	<replace replaceId="4639" withId="616" />
+	<replace replaceId="4636" withId="614" />
+	<replace replaceId="4640" withId="610" />
+	<replace replaceId="4641" withId="611" />
+	<replace replaceId="4643" withId="612" />
+	<replace replaceId="4642" withId="613" />
+	<replace replaceId="4653" withId="613" />
+	<replace replaceId="4652" withId="612" />
+	<replace replaceId="4648" withId="616" />
+	<replace replaceId="4655" withId="610" />
+	<replace replaceId="4651" withId="614" />
+	<replace replaceId="4654" withId="611" />
+	<replace replaceId="4650" withId="615" />
+	<replace replaceId="4632" withId="607" />
+	<replace replaceId="4649" withId="617" />
+</replace_items>
