@@ -63,12 +63,12 @@
 	</menu>
 	<menu name="Search">
 		<item name="Find Item..." hotkey="Ctrl+F" action="FIND_ITEM" help="Find all instances of an item type the map." />
+		<item name="Find Creature..." hotkey="Ctrl+Shift+C" action="FIND_CREATURE" help="Find all instances of a creature on the map." />
 		<separator />
 		<item name="Find Zones" action="SEARCH_ON_MAP_ZONES" help="Find all zones on map."/>
 		<item name="Find Unique" action="SEARCH_ON_MAP_UNIQUE" help="Find all items with an unique ID on map." hotkey="L" />
 		<item name="Find Action" action="SEARCH_ON_MAP_ACTION" help="Find all items with an action ID on map." />
 		<item name="Find Container" action="SEARCH_ON_MAP_CONTAINER" help="Find all containers on map." />
-		<item name="Find In Containers" action="SEARCH_IN_CONTAINERS" help="Find all items inside containers on map." />
 		<item name="Find Writeable" action="SEARCH_ON_MAP_WRITEABLE" help="Find all writeable items on map." />
 		<separator />
 		<item name="Find Everything" action="SEARCH_ON_MAP_EVERYTHING" help="Find all unique/action/text/container items." />
@@ -92,7 +92,6 @@
 			<item name="Find Unique" action="SEARCH_ON_SELECTION_UNIQUE" help="Find all items with an unique ID on selected area." />
 			<item name="Find Action" action="SEARCH_ON_SELECTION_ACTION" help="Find all items with an action ID on selected area." />
 			<item name="Find Container" action="SEARCH_ON_SELECTION_CONTAINER" help="Find all containers on selected area." />
-			<item name="Find In Containers" action="SEARCH_IN_CONTAINERS_SELECTION" help="Find all items inside containers on selected area." />
 			<item name="Find Writeable" action="SEARCH_ON_SELECTION_WRITEABLE" help="Find all writeable items on selected area." />
 		</menu>
 		<separator />
@@ -208,15 +207,15 @@
 			<item name="Remove Duplicates..." action="MAP_REMOVE_DUPLICATES" help="Removes all duplicate items from the map." />
 			<item name="Remove all Corpses..." action="MAP_REMOVE_CORPSES" help="Removes all corpses from the map." />
 		<separator />
-<item name="Go to Position..." hotkey="Ctrl+G" action="GOTO_POSITION" help="Go to a specific XYZ position." />
-		<item name="Edit Towns" hotkey="Ctrl+T" action="EDIT_TOWNS" help="Edit towns." />
-		<item name="Export Minimap..." action="EXPORT_MINIMAP" help="Export minimap to an image file." />
-<item name="Find Item..." hotkey="Ctrl+F" action="FIND_ITEM" help="Find all instances of an item type the map." />
-	<item name="Replace Items..." hotkey="Ctrl+Shift+F" action="REPLACE_ITEMS" help="Replaces all occurrences of one item with another." />
+	<item name="Go to Position..." hotkey="Ctrl+G" action="GOTO_POSITION" help="Go to a specific XYZ position." />
+			<item name="Edit Towns" hotkey="Ctrl+T" action="EDIT_TOWNS" help="Edit towns." />
+			<item name="Export Minimap..." action="EXPORT_MINIMAP" help="Export minimap to an image file." />
+	<item name="Find Item..." hotkey="Ctrl+F" action="FIND_ITEM" help="Find all instances of an item type the map." />
+		<item name="Find Creature..." hotkey="Ctrl+Shift+C" action="FIND_CREATURE" help="Find all instances of a creature on the map." />
+		<item name="Replace Items..." hotkey="Ctrl+Shift+F" action="REPLACE_ITEMS" help="Replaces all occurrences of one item with another." />
 		<item name="Refresh Items" action="REFRESH_ITEMS" help="Refresh items to fix flags" />
-
 		<!-- clickable buttons that toggle some settings such as select right click RAw toggle button and toggle button to disable map display right click context menu then.-->
-		
+			
 
 	</menu>
 </menubar>
