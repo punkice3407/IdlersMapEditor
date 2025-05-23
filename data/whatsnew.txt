@@ -1,0 +1,15 @@
+Version 6.7.4
+__Action_Id_Drawing__
+- Added ActionID drawing feature
+- Added ability to set ActionID for placed items
+- Added ActionID input field and checkbox in palette window
+
+Version 6.7.3
+__The_useless_update
+- Randomize color of the logo of OTARME to signify constant changes
+
+Version 6.7.2
+- Minimap Fixes & Optimization
+- Cache
+- Minimap Waypoints for older maps
+
