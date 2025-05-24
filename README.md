@@ -3,6 +3,8 @@ https://discord.com/invite/FD2cYKBq5E
 idlers tavern has all the information about updates"
 
 
+continuation of : 
+https://github.com/Wirless/OTARMEIE-OLD
 
 
 
