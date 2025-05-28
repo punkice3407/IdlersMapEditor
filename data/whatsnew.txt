@@ -1,3 +1,19 @@
+Version 6.8.2
+- Autoborder Fix
+- Map Summary
+
+Version 6.7.8
+- Create Monster/Npc 
+
+Version 6.7.7
+Hotkey update allows to replace hotkeys instead of erroring out
+
+Version 6.7.6
+- Improved map export
+
+Version 6.7.5
+- When loading map of version you may not have you can forceload it with any version. just escape the error
+
 Version 6.7.4
 __Action_Id_Drawing__
 - Added ActionID drawing feature
