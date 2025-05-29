@@ -248,7 +248,9 @@
 		<item name="Replace Items..." hotkey="" action="REPLACE_ITEMS" help="Replaces all occurrences of one item with another."/>
 		<item name="Refresh Items" action="REFRESH_ITEMS" help="Refresh items to fix flags"/>
 		<!-- clickable buttons that toggle some settings such as select right click RAw toggle button and toggle button to disable map display right click context menu then.-->
-			
+			<separator/>
+		<item name="Generate Procedural Map..." action="GENERATE_PROCEDURAL_MAP" help="Generate a procedural map using OTMapGen"/>
+		<separator/>
 
 	</menu>
 </menubar>
