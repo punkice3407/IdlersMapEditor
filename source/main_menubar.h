@@ -29,6 +29,7 @@ namespace MenuBar {
 		SAVE,
 		SAVE_AS,
 		GENERATE_MAP,
+		GENERATE_PROCEDURAL_MAP,
 		CLOSE,
 		IMPORT_MAP,
 		IMPORT_MONSTERS,
@@ -173,6 +174,7 @@ namespace MenuBar {
 		MAP_MENU_GENERATE_ISLAND,
 		MAP_VALIDATE_GROUND,
 		MAP_CREATE_BORDER,
+		MAP_SUMMARIZE,
 			
 
 
@@ -208,6 +210,7 @@ public:
 	void OnNew(wxCommandEvent& event);
 	void OnOpen(wxCommandEvent& event);
 	void OnGenerateMap(wxCommandEvent& event);
+	void OnGenerateProceduralMap(wxCommandEvent& event);
 	void OnOpenRecent(wxCommandEvent& event);
 	void OnSave(wxCommandEvent& event);
 	void OnSaveAs(wxCommandEvent& event);
@@ -320,6 +323,7 @@ public:
 	void OnRefreshItems(wxCommandEvent& event);
 	void OnGenerateIsland(wxCommandEvent& event);
 	void OnCreateBorder(wxCommandEvent& event);
+	void OnMapSummarize(wxCommandEvent& event);
 
 protected:
 	// Load and returns a menu item, also sets accelerator

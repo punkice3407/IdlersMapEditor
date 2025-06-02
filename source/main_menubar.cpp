@@ -69,6 +69,8 @@
 #include "editor.h"
 #include "gui.h"
 #include "border_editor_window.h"
+#include "map_summary_window.h"
+#include "otmapgen_dialog.h"
 
 #include <wx/chartype.h>
 
@@ -87,6 +89,7 @@ BEGIN_EVENT_TABLE(MainMenuBar, wxEvtHandler)
 	EVT_MENU(MenuBar::SAVE, MainMenuBar::OnSave)
 	EVT_MENU(MenuBar::SAVE_AS, MainMenuBar::OnSaveAs)
 	EVT_MENU(MenuBar::GENERATE_MAP, MainMenuBar::OnGenerateMap)
+	EVT_MENU(MenuBar::GENERATE_PROCEDURAL_MAP, MainMenuBar::OnGenerateProceduralMap)
 	EVT_MENU(MenuBar::MAP_MENU_GENERATE_ISLAND, MainMenuBar::OnGenerateIsland)
 	EVT_MENU(MenuBar::FIND_CREATURE, MainMenuBar::OnSearchForCreature)
 END_EVENT_TABLE()
@@ -106,6 +109,7 @@ MainMenuBar::MainMenuBar(MainFrame* frame) :
 	MAKE_ACTION(SAVE, wxITEM_NORMAL, OnSave);
 	MAKE_ACTION(SAVE_AS, wxITEM_NORMAL, OnSaveAs);
 	MAKE_ACTION(GENERATE_MAP, wxITEM_NORMAL, OnGenerateMap);
+	MAKE_ACTION(GENERATE_PROCEDURAL_MAP, wxITEM_NORMAL, OnGenerateProceduralMap);
 	MAKE_ACTION(CLOSE, wxITEM_NORMAL, OnClose);
 
 	MAKE_ACTION(IMPORT_MAP, wxITEM_NORMAL, OnImportMap);
@@ -264,6 +268,7 @@ MainMenuBar::MainMenuBar(MainFrame* frame) :
 	// 669
 	MAKE_ACTION(FIND_CREATURE, wxITEM_NORMAL, OnSearchForCreature);
 	MAKE_ACTION(MAP_CREATE_BORDER, wxITEM_NORMAL, OnCreateBorder);
+	MAKE_ACTION(MAP_SUMMARIZE, wxITEM_NORMAL, OnMapSummarize);
 
 	// A deleter, this way the frame does not need
 	// to bother deleting us.
@@ -792,6 +797,20 @@ void MainMenuBar::OnGenerateMap(wxCommandEvent& WXUNUSED(event)) {
 	UpdateMenubar();
 	Refresh();
 	*/
+}
+
+void MainMenuBar::OnGenerateProceduralMap(wxCommandEvent& WXUNUSED(event)) {
+	if (!g_gui.IsEditorOpen()) {
+		wxMessageBox("Please create or open a map first before generating procedural content.", "No Map Open", wxOK | wxICON_WARNING);
+		return;
+	}
+	
+	OTMapGenDialog dialog(frame);
+	if (dialog.ShowModal() == wxID_OK) {
+		// Map was generated successfully
+		g_gui.RefreshView();
+		g_gui.UpdateMinimap();
+	}
 }
 
 void MainMenuBar::OnOpenRecent(wxCommandEvent& event) {
@@ -3659,4 +3678,14 @@ void MainMenuBar::OnCreateBorder(wxCommandEvent& WXUNUSED(event)) {
 
 	// After editing borders, refresh view to show any changes
 	g_gui.RefreshView();
+}
+
+void MainMenuBar::OnMapSummarize(wxCommandEvent& WXUNUSED(event)) {
+	if (!g_gui.IsEditorOpen()) {
+		g_gui.PopupDialog("Error", "No map is currently open!", wxOK | wxICON_ERROR);
+		return;
+	}
+
+	// Show the map summary window
+	g_gui.ShowMapSummaryWindow();
 }

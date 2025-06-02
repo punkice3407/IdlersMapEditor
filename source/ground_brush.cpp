@@ -21,6 +21,8 @@
 #include "items.h"
 #include "basemap.h"
 
+static thread_local std::set<Position> processing_tiles;
+
 uint32_t GroundBrush::border_types[256];
 
 int AutoBorder::edgeNameToID(const std::string& edgename) {
@@ -667,18 +669,20 @@ const GroundBrush::BorderBlock* GroundBrush::getBrushTo(GroundBrush* first, Grou
 	return nullptr;
 }
 
-inline GroundBrush* extractGroundBrushFromTile(BaseMap* map, uint32_t x, uint32_t y, uint32_t z) {
-	Tile* t = map->getTile(x, y, z);
-	return t ? t->getGroundBrush() : nullptr;
-}
-
 void GroundBrush::doBorders(BaseMap* map, Tile* tile) {
+	// Add recursion guard
+	if (!tile || processing_tiles.find(tile->getPosition()) != processing_tiles.end()) {
+		return;
+	}
+	processing_tiles.insert(tile->getPosition());
+	
 	// Early exit for custom border mode
 	if (g_settings.getBoolean(Config::CUSTOM_BORDER_ENABLED) && g_settings.getBoolean(Config::USE_AUTOMAGIC)) {
 		// Get the custom border ID
 		int customBorderId = g_settings.getInteger(Config::CUSTOM_BORDER_ID);
 		if (customBorderId <= 0) {
 			// Invalid border ID, fall back to normal border handling
+			processing_tiles.erase(tile->getPosition());
 			return;
 		}
 		
@@ -715,6 +719,7 @@ void GroundBrush::doBorders(BaseMap* map, Tile* tile) {
 		// Look up the border in the borders container
 		auto it = g_brushes.borders.find(customBorderId);
 		if (it == g_brushes.borders.end() || !it->second) {
+			processing_tiles.erase(tile->getPosition());
 			return; // Border ID not found
 		}
 		
@@ -876,6 +881,7 @@ void GroundBrush::doBorders(BaseMap* map, Tile* tile) {
 		}
 		
 		// Early return, don't proceed with normal border handling
+		processing_tiles.erase(tile->getPosition());
 		return;
 	}
 	
@@ -1017,15 +1023,10 @@ void GroundBrush::doBorders(BaseMap* map, Tile* tile) {
 			continue;
 		}
 
-		// printf("Checking neighbour #%d\n", i);
-		// printf("\tNeighbour not checked before\n");
-
 		GroundBrush* other = neighbourPair.second;
 		if (borderBrush) {
 			if (other) {
-				// printf("\tNeighbour has brush\n");
 				if (other->getID() == borderBrush->getID()) {
-					// printf("\tNeighbour has same brush as we\n");
 					continue;
 				}
 
@@ -1325,15 +1326,6 @@ void GroundBrush::doBorders(BaseMap* map, Tile* tile) {
 
 	for (const BorderBlock* borderBlock : specificList) {
 		for (const SpecificCaseBlock* specificCaseBlock : borderBlock->specific_cases) {
-			/*
-			printf("New round\n");
-			if(specificCaseBlock->to_replace_id == 0) {
-				continue;
-			}
-			if(specificCaseBlock->with_id == 0) {
-				continue;
-			}
-			*/
 			uint32_t matches = 0;
 			for (Item* item : tile->items) {
 				if (!item->isBorder()) {
@@ -1366,9 +1358,16 @@ void GroundBrush::doBorders(BaseMap* map, Tile* tile) {
 				// if delete_all mode, consider the border replaced
 				bool replaced = specificCaseBlock->delete_all;
 
-				while (it != tileItems.end()) {
+				// Add iteration guard to prevent infinite loops
+				int item_iterations = 0;
+				const int max_item_iterations = tileItems.size() * 2 + 20; // Safety limit
+
+				while (it != tileItems.end() && item_iterations < max_item_iterations) {
+					++item_iterations;
+					
 					Item* item = *it;
 					if (!item->isBorder()) {
+						++it;
 						continue;
 					}
 
@@ -1397,6 +1396,9 @@ void GroundBrush::doBorders(BaseMap* map, Tile* tile) {
 			}
 		}
 	}
+
+	// Remove tile from processing set when done
+	processing_tiles.erase(tile->getPosition());
 }
 
 // Add a custom method to reset borderize for the auto-magic behavior

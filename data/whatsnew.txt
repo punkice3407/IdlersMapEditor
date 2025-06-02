@@ -1,3 +1,6 @@
+Version 6.8.5
+- Including OTMapGen very basic version .
+
 Version 6.8.2
 - Autoborder Fix
 - Map Summary
